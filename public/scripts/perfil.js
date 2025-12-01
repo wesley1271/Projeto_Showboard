@@ -1,5 +1,5 @@
 const botao = document.getElementById("botaoTrocarAvatar");
-const grid = document.getElementById("seletorAvatar"); // variável correta
+const grid = document.getElementById("seletorAvatar"); 
 const avatarAtual = document.getElementById("avatarAtual");
 
 

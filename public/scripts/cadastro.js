@@ -1,134 +1,130 @@
-/* Elementos do form */
-const formCadastro = document.getElementById('cadaster-form');
-const nomeInput = document.getElementById('nome');
-const emailInput = document.getElementById('email');
-const senhaInput = document.getElementById('senha');
-const btn = document.getElementById('btn');
+document.addEventListener("DOMContentLoaded", () => {
 
-/* erros de validação */
-const nomeErr = document.getElementById('nomeErr');
-const emailErr = document.getElementById('emailErr');
-const senhaErr = document.getElementById('senhaErr');
-const feedbackGeral = document.getElementById('feedback');
+    const form = document.getElementById("cadaster-form"); 
+    const nomeInput = document.getElementById('nome');
+    const emailInput = document.getElementById('email');
+    const senhaInput = document.getElementById('senha');
+    const senhaConfirm = document.getElementById('confirm-senha');
+    const btn = document.getElementById('btn');
+
+    const nomeErr = document.getElementById('nomeErr');
+    const emailErr = document.getElementById('emailErr');
+    const senhaErr = document.getElementById('senhaErr');
+    const senhaConfirmErr = document.getElementById('senhaConfirmErr');
 
 
-function validarEmail(email) {
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return emailRegex.test(email)
-}
+    // validação Regex
+    function validarEmail(email) {
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        return emailRegex.test(email);
+    }
 
-function todosValidos() {
-    return (
-        nomeInput.value.trim().length >= 3 && validarEmail(emailInput.value.trim()) && senhaInput.value.trim().length >= 6
-    );
-}
-
-function validacaoForm() {
-
-    nomeInput.addEventListener('blur', () => {
-        const valorNome = nomeInput.value.trim();
-
-        nomeErr.textContent = '';
-        nomeInput.style.border = '1px solid #ced4da';
-
-        if (valorNome === '') {
-            nomeErr.textContent = 'Nome é obrigatório.';
-            nomeInput.style.border = '2px solid #dc3545';
-        }
-        else if (valorNome.length < 3) {
-            nomeErr.textContent = 'O nome deve conter 3 ou mais caracteres.';
-            nomeInput.style.border = '2px solid #dc3545';
-        }
-        else {
-            console.log('Nome válido');
-            nomeInput.style.border = '1px solid #ced4da';
-        }
-
+    function atualizarBotao() {
         btn.disabled = !todosValidos();
+    }
+
+    function todosValidos() {
+        return (
+            nomeInput.value.trim().length >= 3 &&
+            validarEmail(emailInput.value.trim()) &&
+            senhaInput.value.trim().length >= 6 &&
+            senhaInput.value === senhaConfirm.value &&
+            senhaConfirm.value.trim() !== ''
+        );
+    }
+
+    function mostrarErro(campo, elementoErro, mensagem) {
+        if (mensagem) {
+            elementoErro.textContent = mensagem;
+            campo.style.border = "2px solid #dc3545";
+        } else {
+            elementoErro.textContent = "";
+            campo.style.border = "1px solid #ced4da";
+        }
+    }
+
+    form.addEventListener("submit", (e) => {
+        if (senhaInput.value !== senhaConfirm.value) {
+            e.preventDefault();
+            alert("As senhas não coincidem!");
+        }
+    });
+
+
+    // validação blur
+    nomeInput.addEventListener('blur', () => {
+        const nome = nomeInput.value.trim();
+        if (nome === "") mostrarErro(nomeInput, nomeErr, "Nome é obrigatório.");
+        else if (nome.length < 3) mostrarErro(nomeInput, nomeErr, "O nome deve conter 3 ou mais caracteres.");
+        else mostrarErro(nomeInput, nomeErr, "");
+        atualizarBotao();
     });
 
     emailInput.addEventListener('blur', () => {
-        const valorEmail = emailInput.value.trim();
-
-        emailErr.textContent = '';
-        emailInput.style.border = '1px solid #ced4da';
-
-        if (valorEmail === '') {
-            emailErr.textContent = 'Email é obrigatório.';
-            emailInput.style.border = '2px solid #dc3545';
-        } else if (!validarEmail(valorEmail)) {
-            emailErr.textContent = 'Formato de E-mail inválido (ex: nome@dominio.com).';
-            emailInput.style.border = '2px solid #dc3545';
-        } else {
-            console.log('Email válido');
-            emailInput.style.border = '1px solid #ced4da';
-        }
-
-        btn.disabled = !todosValidos();
+        const email = emailInput.value.trim();
+        if (email === "") mostrarErro(emailInput, emailErr, "Email é obrigatório.");
+        else if (!validarEmail(email)) mostrarErro(emailInput, emailErr, "Formato inválido.");
+        else mostrarErro(emailInput, emailErr, "");
+        atualizarBotao();
     });
 
     senhaInput.addEventListener('blur', () => {
-        const valorSenha = senhaInput.value.trim();
+        const senha = senhaInput.value.trim();
+        const confirm = senhaConfirm.value.trim();
 
-        senhaErr.textContent = '';
-        senhaInput.style.border = '1px solid #ced4da';
+        if (senha === "") mostrarErro(senhaInput, senhaErr, "Senha é obrigatória.");
+        else if (senha.length < 6) mostrarErro(senhaInput, senhaErr, "Senha deve ter 6 ou mais caracteres.");
+        else if (confirm !== "" && senha !== confirm) mostrarErro(senhaInput, senhaErr, "As senhas devem coincidir.");
+        else mostrarErro(senhaInput, senhaErr, "");
 
-        if (valorSenha === '') {
-            senhaErr.textContent = 'Senha é obrigatória.';
-            senhaInput.style.border = '2px solid #dc3545';
-        } else if (valorSenha.length < 6) {
-            senhaErr.textContent = 'Senha deve conter mais de 6 caracteres.';
-            senhaInput.style.border = '2px solid #dc3545';
-        } else {
-            console.log('Senha válida');
-            senhaInput.style.border = '1px solid #ced4da';
-        }
-
-        btn.disabled = !todosValidos();
+        atualizarBotao();
     });
-}
 
-validacaoForm();
+    senhaConfirm.addEventListener('blur', () => {
+        const senha = senhaInput.value.trim();
+        const confirm = senhaConfirm.value.trim();
 
+        if (confirm === "") mostrarErro(senhaConfirm, senhaConfirmErr, "Confirmação é obrigatória.");
+        else if (confirm.length < 6) mostrarErro(senhaConfirm, senhaConfirmErr, "Senha deve ter 6 ou mais caracteres.");
+        else if (confirm !== senha) mostrarErro(senhaConfirm, senhaConfirmErr, "As senhas devem coincidir.");
+        else mostrarErro(senhaConfirm, senhaConfirmErr, "");
 
-async function validacaoCadastro(e) {
-    e.preventDefault();
+        atualizarBotao();
+    });
 
+    [nomeInput, emailInput, senhaInput, senhaConfirm].forEach(input => {
+        input.addEventListener('input', atualizarBotao);
+    });
 
-    if (!todosValidos()) {
-        feedbackGeral.textContent = 'Corrija os erros antes de enviar.';
-        feedbackGeral.className = 'erro';
-        return;
-    }
+    // Eye password
+    const eyeOpen = document.getElementById("desocultar");
+    const eyeClosed = document.getElementById("ocultar");
 
-    btn.disabled = true;
+    eyeOpen.addEventListener("click", () => {
+        senhaInput.type = "text";
+        eyeOpen.style.display = "none";
+        eyeClosed.style.display = "block";
+    });
 
-    const formData = new FormData(formCadastro);
+    eyeClosed.addEventListener("click", () => {
+        senhaInput.type = "password";
+        eyeClosed.style.display = "none";
+        eyeOpen.style.display = "block";
+    });
 
-    try {
-        const resposta = await fetch('cadastro.php', {
-            method: 'POST',
-            body: formData
-        });
+    const eyeOpenConfirm = document.getElementById("confirm-desocultar");
+    const eyeClosedConfirm = document.getElementById("confirm-ocultar");
 
-        const resultado = await resposta.json();
+    eyeOpenConfirm.addEventListener("click", () => {
+        senhaConfirm.type = "text";
+        eyeOpenConfirm.style.display = "none";
+        eyeClosedConfirm.style.display = "block";
+    });
 
-        if (resultado.sucesso) {
-            feedbackGeral.textContent = resultado.mensagem || 'Enviado!';
-            feedbackGeral.className = 'sucesso';
-            formCadastro.reset();
-        } else {
-            feedbackGeral.textContent = resultado.mensagem || 'Erro ao enviar.';
-            feedbackGeral.className = 'erro';
-        }
+    eyeClosedConfirm.addEventListener("click", () => {
+        senhaConfirm.type = "password";
+        eyeClosedConfirm.style.display = "none";
+        eyeOpenConfirm.style.display = "block";
+    });
 
-    } catch (e) {
-        feedbackGeral.textContent = 'Erro de conexão.';
-        feedbackGeral.className = 'erro';
-    } finally {
-        btn.disabled = false;
-    }
- 
-
-}
-formCadastro.addEventListener('submit', validacaoCadastro);
+});

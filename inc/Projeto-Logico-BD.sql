@@ -1,5 +1,5 @@
-create database projeto_portfolio;
-use projeto_portfolio;
+create database showboard;
+use showboard;
 
 CREATE TABLE usuarios (
     id INT AUTO_INCREMENT PRIMARY KEY,

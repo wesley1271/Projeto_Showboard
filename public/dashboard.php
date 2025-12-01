@@ -200,7 +200,7 @@ if (!$result) {
               <a href="http://localhost/Projeto_Grafico/public/index.php?rota=home" class="foo-link text-white"> Início </a>
             </p>
             <p>
-              <a href="#!" class="foo-link text-white"> Meu Perfil </a>
+              <a href="http://localhost/Projeto_Grafico/public/index.php?rota=perfil" class="foo-link text-white"> Meu Perfil </a>
             </p>
             <p>
               <a href="http://localhost/Projeto_Grafico/public/index.php?rota=dashboard" class="foo-link text-white">Meus Projetos </a>

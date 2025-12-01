@@ -129,7 +129,6 @@ div.hamburg {
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   min-height: 50vh
-
 }
 
 .perfil-box strong {
@@ -139,6 +138,13 @@ div.hamburg {
 .perfil-box p {
   display: flex;
   font-size: var(--p-font-size);
+
+}
+
+.perfil-box span {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-all;
 }
 
 .avatar-box {
@@ -154,17 +160,13 @@ div.hamburg {
   border-radius: 50%;
   border: 4px solid var(--hover-color);
   overflow: visible;
-  /* IMPORTANTE: permite que o botão fique sobre a borda */
   position: relative;
-  /* necessário para o botão */
 }
 
 .avatar-button {
   position: absolute;
   bottom: -10px;
-  /* um pouco abaixo do canto da borda */
   right: -10px;
-  /* um pouco à direita do canto da borda */
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -382,7 +384,7 @@ div.hamburg {
   color: white;
   cursor: pointer;
   transition: all 0.3s ease;
-  text-decoration: none; /* remove sublinhado */
+  text-decoration: none;
 }
 
 .card .btn-edit:hover {
@@ -391,7 +393,7 @@ div.hamburg {
 }
 
 a.btn-edit {
-font-family: 'Montserrat';
+  font-family: 'Montserrat';
 }
 
 
@@ -406,9 +408,10 @@ font-family: 'Montserrat';
 }
 
 .content-about {
-    padding: 20px 60px;
-    margin-left: 160px;
+  padding: 20px 60px;
+  margin-left: 160px;
 }
+
 h6.projects-title {
   position: relative;
   font-family: 'Montserrat-Bold';
@@ -472,13 +475,13 @@ footer img:hover {
 
   .avatar-grid img {
     width: 40px;
-  
+
     height: 40px;
   }
 
-  .perfil-box {
-    width: 70%;
-  }
+    .perfil-box {
+        width: 85%;
+    }
 }
 
 @media (max-width: 450px) {
@@ -539,7 +542,7 @@ footer img:hover {
 @media (max-width: 768px) {
 
 
-  footer .row > div {
+  footer .row>div {
     display: block !important;
     text-align: center !important;
   }
@@ -583,6 +586,10 @@ footer img:hover {
 @media (min-height: 850px) {
   .end-footer {
     margin-top: 150px;
+  }
+
+  .perfil-box {
+    min-height: 300px;
   }
 }
 

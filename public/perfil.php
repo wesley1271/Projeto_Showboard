@@ -136,7 +136,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['avatar'], $_POST['id'
 
       <div class="box-content">
         <p><strong>Nome:</strong> <?= htmlspecialchars($usuario['nome']) ?></p>
-        <p><strong>Email:</strong> <?= htmlspecialchars($usuario['email']) ?></p>
+        <p>
+          <strong>Email:</strong> <span><?= htmlspecialchars($usuario['email']) ?></span>
+      </p>
         <p><strong>Senha:</strong> ************</p>
       </div>
 
@@ -217,65 +219,65 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['avatar'], $_POST['id'
             </div>
 
 
-              
-          <div class="foo-content col-md-4   mb-md-0 mb-4">
 
-            <h6 class="projects-title text-uppercase fw-bold">Contato dos integrantes</h6>
+            <div class="foo-content col-md-4   mb-md-0 mb-4">
 
-            <div class="team-member mb-3">
-              <p class="mb-1 fw-bold">Wesley Carvalho</p>
-              <div class="social-icons d-flex gap-3">
-                <a href="https://github.com/wesley1271" class="integrer-a text-white" target="_blank">
-                  <img src="img/github.png" alt="GitHub">
-                </a>
-                <a href="https://www.linkedin.com/in/-wesley-carvalho-" target="_blank" class="integrer-a text-white">
-                  <img src="img/linkedin.png" alt="LinkedIn">
-                </a>
-                <a href="https://mail.google.com/mail/?view=cm&to=wesley0608romano@gmail.com" class="integrer-a text-white" target="_blank">
-                  <img src="img/gmail.png" alt="Gmail">
-                </a>
+              <h6 class="projects-title text-uppercase fw-bold">Contato dos integrantes</h6>
+
+              <div class="team-member mb-3">
+                <p class="mb-1 fw-bold">Wesley Carvalho</p>
+                <div class="social-icons d-flex gap-3">
+                  <a href="https://github.com/wesley1271" class="integrer-a text-white" target="_blank">
+                    <img src="img/github.png" alt="GitHub">
+                  </a>
+                  <a href="https://www.linkedin.com/in/-wesley-carvalho-" target="_blank" class="integrer-a text-white">
+                    <img src="img/linkedin.png" alt="LinkedIn">
+                  </a>
+                  <a href="https://mail.google.com/mail/?view=cm&to=wesley0608romano@gmail.com" class="integrer-a text-white" target="_blank">
+                    <img src="img/gmail.png" alt="Gmail">
+                  </a>
+                </div>
               </div>
-            </div>
 
 
-            <div class="team-member mb-3">
-              <p class="mb-1 fw-bold">Israel dos Santos</p>
-              <div class="social-icons d-flex align-items-center gap-3">
+              <div class="team-member mb-3">
+                <p class="mb-1 fw-bold">Israel dos Santos</p>
+                <div class="social-icons d-flex align-items-center gap-3">
 
-                <a href="https://www.instagram.com/israelsantosoficial/" target="_blank" class="integrer-a text-white">
-                  <img src="img/instagram.png" class="insta-icon" alt="Instagram">
-                </a>
+                  <a href="https://www.instagram.com/israelsantosoficial/" target="_blank" class="integrer-a text-white">
+                    <img src="img/instagram.png" class="insta-icon" alt="Instagram">
+                  </a>
 
-                <a href="https://www.linkedin.com/in/isra-santos-570b6b1a1" target="_blank" class="integrer-a text-white">
-                  <img src="img/linkedin.png" alt="LinkedIn">
-                </a>
+                  <a href="https://www.linkedin.com/in/isra-santos-570b6b1a1" target="_blank" class="integrer-a text-white">
+                    <img src="img/linkedin.png" alt="LinkedIn">
+                  </a>
 
-                <a href="https://outlook.office.com/mail/deeplink/compose?to=Israel.peniel@outlook.com" target="_blank" class="integrer-a text-white">
-                  <img src="img/outlook.svg" alt="Outlook">
-                </a>
+                  <a href="https://outlook.office.com/mail/deeplink/compose?to=Israel.peniel@outlook.com" target="_blank" class="integrer-a text-white">
+                    <img src="img/outlook.svg" alt="Outlook">
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="team-member mb-3">
-              <p class="mb-1 fw-bold">Henry Gonçalves</p>
-              <div class="social-icons d-flex align-items-center gap-3">
-                <a href="https://github.com/henry121g" class="integrer-a text-white" target="_blank">
-                  <img src="img/github.png" alt="GitHub">
-                </a>
+              <div class="team-member mb-3">
+                <p class="mb-1 fw-bold">Henry Gonçalves</p>
+                <div class="social-icons d-flex align-items-center gap-3">
+                  <a href="https://github.com/henry121g" class="integrer-a text-white" target="_blank">
+                    <img src="img/github.png" alt="GitHub">
+                  </a>
 
-                <a href="https://www.instagram.com/zote_121g/" target="_blank" class="integrer-a text-white">
-                  <img src="img/instagram.png" class="insta-icon" alt="Instagram">
-                </a>
+                  <a href="https://www.instagram.com/zote_121g/" target="_blank" class="integrer-a text-white">
+                    <img src="img/instagram.png" class="insta-icon" alt="Instagram">
+                  </a>
 
-                <a href="https://www.linkedin.com/in/henry-gon%C3%A7alves-furtuna-06b889188/" target="_blank" class="integrer-a text-white">
-                  <img src="img/linkedin.png" alt="LinkedIn">
-                </a>
+                  <a href="https://www.linkedin.com/in/henry-gon%C3%A7alves-furtuna-06b889188/" target="_blank" class="integrer-a text-white">
+                    <img src="img/linkedin.png" alt="LinkedIn">
+                  </a>
 
+                </div>
               </div>
+
             </div>
 
           </div>
-
-        </div>
       </section>
 
       <div class="end-footer text-center p-3">

@@ -4,7 +4,6 @@ session_start();
 
 define('CONTROL', true);
 
-// Nome correto da variável
 $usuario_id = $_SESSION['usuario_id'] ?? null;
 
 $rota = $_GET['rota'] ?? 'login';

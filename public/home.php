@@ -152,7 +152,7 @@ defined('CONTROL') or die('Acesso negado!');
             <h6 class=" projects-title text-uppercase fw-bold">Links Úteis</h6>
 
             <p>
-              <a href="http://localhost/Projeto_Grafico/public/index.php?rota=home" class="foo-link text-white"> Início </a>
+              <a href="http://localhost/Projeto_Grafico/public/index.php?" class="foo-link text-white"> Início </a>
             </p>
             <p>
               <a href="http://localhost/Projeto_Grafico/public/index.php?rota=perfil" class="foo-link text-white"> Meu Perfil </a>
