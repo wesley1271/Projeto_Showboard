@@ -90,7 +90,7 @@ defined('CONTROL') or die('Acesso negado!');
           <img src="img/acessibilidade.jpg" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
             <h2>Acessibilidade</h2>
-            <p>A Showboard oferece interações personalizadas para que o usuário se sinta confortável utilizando a ferramenta</p>
+            <p>A Showboard foi desenvolvida com foco em acessibilidade, implementando boas práticas que permitem navegação clara, estrutura organizada e melhor usabilidade para diferentes perfis de usuários.</p>
           </div>
         </div>
       </div>
@@ -165,7 +165,7 @@ defined('CONTROL') or die('Acesso negado!');
 
 
 
-     
+
           <div class="foo-content col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
 
             <h6 class="projects-title text-uppercase fw-bold">Contato dos integrantes</h6>
