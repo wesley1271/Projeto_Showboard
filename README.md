@@ -70,7 +70,7 @@ O projeto buscou aplicar boas práticas de acessibilidade, com:
 ## 📂 Como Executar o Projeto
 
 1. Copie o link completo do repositório no GitHub:
-   https://github.com/seu-usuario/showboard
+   (https://github.com/wesley1271/Projeto_Showboard.git)
 
 2. Abra o terminal ou Git Bash.
 
