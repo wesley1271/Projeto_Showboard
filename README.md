@@ -61,7 +61,7 @@ O projeto buscou aplicar boas práticas de acessibilidade, com:
 
 ---
 
-![Tela de home page](./inc/assets/homepage-showboard.png)
+![Tela de home page](./inc/assets/homepage_showboard.png)
 
 ---
 
