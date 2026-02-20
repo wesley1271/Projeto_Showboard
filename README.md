@@ -57,15 +57,15 @@ O projeto buscou aplicar boas práticas de acessibilidade, com:
 
 ---
 
-![Tela de cadastro](./inc/assets/showboard-login.png)
+![Tela de cadastro](./inc/assets/showboard-cadastro.png)
 
 ---
 
-![Tela de home page](./inc/assets/showboard-login.png)
+![Tela de home page](./inc/assets/homepage-showboard.png)
 
 ---
 
-![Tela de carrossel](./inc/assets/showboard-login.png)
+![Tela de carrossel](./inc/assets/carrossel-showboard.png)
 
 ## 📂 Como Executar o Projeto
 
