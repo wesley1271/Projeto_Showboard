@@ -75,7 +75,7 @@ O projeto buscou aplicar boas práticas de acessibilidade, com:
 2. Abra o terminal ou Git Bash.
 
 3. Execute o comando:
-   git clone https://github.com/seu-usuario/projeto_showboard.git
+   git clone (https://github.com/wesley1271/Projeto_Showboard.git)
 
 4. Acesse a pasta do projeto:
    cd projeto_showboard
