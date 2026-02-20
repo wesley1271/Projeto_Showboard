@@ -67,9 +67,20 @@ O projeto buscou aplicar boas práticas de acessibilidade, com:
 
 ![Tela de carrossel](./inc/assets/showboard-login.png)
 
+## 📂 Como Executar o Projeto
+
+1. Copie o link completo do repositório no GitHub:
+   https://github.com/seu-usuario/showboard
+
+2. Abra o terminal ou Git Bash.
+
+3. Execute o comando:
+   git clone https://github.com/seu-usuario/projeto_showboard.git
+
+4. Acesse a pasta do projeto:
+   cd projeto_showboard
+
+5. Abra a pasta public no navegador.
 
 ---
 
-## 📂 Como Executar o Projeto
-
-1. Copie o Link do repositório
